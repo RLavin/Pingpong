@@ -1,13 +1,18 @@
 package com.ironyard.data;
 
+import javax.persistence.*;
+
 /**
  * Created by Raul on 11/9/16.
  */
+@Entity
 public class Match {
     private String playerOne;
     private String playerTwo;
     private int playerOneScore;
     private int playerTwoScore;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     public String getPlayerOne() {
