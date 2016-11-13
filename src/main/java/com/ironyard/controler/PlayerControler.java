@@ -24,15 +24,15 @@ public class PlayerControler {
 
 
     @RequestMapping(value = "save", method = RequestMethod.POST, produces = "application/json")
-    public Player save(@RequestBody Player aMatch){
-        playerRepository.save(aMatch);
-        return playerRepository.findOne(aMatch.getId());
+    public Player save(@RequestBody Player aPlayer){
+        playerRepository.save(aPlayer);
+        return playerRepository.findOne(aPlayer.getId());
     }
 
     @RequestMapping(value = "update", method = RequestMethod.PUT)
-    public Player update(@RequestBody Player aMatch){
-        playerRepository.save(aMatch);
-        return playerRepository.findOne(aMatch.getId());
+    public Player update(@RequestBody Player aPlayer){
+        playerRepository.save(aPlayer);
+        return playerRepository.findOne(aPlayer.getId());
     }
 
     @RequestMapping(value = "get/{id}", method = RequestMethod.GET)
@@ -49,8 +49,8 @@ public class PlayerControler {
         return deleted;
     }
     @RequestMapping(value = "list", method = RequestMethod.GET)
-    public Iterable<Player> list (@RequestParam("page") Integer page,
-                                  @RequestParam("size") Integer size,
+    public Iterable<Player> list (@RequestParam(value ="page", required = false)Integer page,
+                                  @RequestParam(value = "size", required = false)Integer size,
                                   @RequestParam(value = "sortby", required = false) String sortby,
                                   @RequestParam(value = "dir", required = false) Sort.Direction direction){
 

@@ -50,8 +50,8 @@ public class MatchControler {
         return deleted;
     }
     @RequestMapping(value = "list", method = RequestMethod.GET)
-    public Iterable<Match> list (@RequestParam("page") Integer page,
-                                 @RequestParam("size") Integer size,
+    public Iterable<Match> list (@RequestParam(value ="page", required = false)Integer page,
+                                 @RequestParam(value = "size", required = false)Integer size,
                                  @RequestParam(value = "sortby", required = false) String sortby,
                                  @RequestParam(value = "dir", required = false) Sort.Direction direction){
 

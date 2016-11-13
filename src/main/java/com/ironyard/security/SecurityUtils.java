@@ -21,6 +21,16 @@ public class SecurityUtils {
         return checkme.equalsIgnoreCase(SECRET);
     }
 
+    /**
+     * This will generate and encrypted token that can be used with all JSON apis.
+     * Ensure the token is set as a header parameter with a key of 'x-authorization-key'
+     * <p>Example:  "sldkfjsodfwiefjiodjf/sdfsdf"
+
+     *
+     * @return Returns a String object with the encrypted token as its value
+     * @throws Throwable
+     */
+
     public static String genToken() throws Throwable {
 
         SecretKeySpec secretKeySpec = new SecretKeySpec(SECRET.getBytes(), "Blowfish");
@@ -53,7 +63,13 @@ public class SecurityUtils {
         return decrypted;
     }
 
-
+    /**
+     * This will evaluate that the key is a valid one then return
+     * approval if your authorized
+     *
+     * @param key
+     * @return
+     */
     public static boolean isValidKey(String key)  {
         DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
         Calendar oneYearAgo = Calendar.getInstance();

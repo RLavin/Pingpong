@@ -18,6 +18,13 @@ public class Player {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    public Player(String raul, String s, int i, int i1) {
+
+    }
+
+    public Player() {
+    }
+
     public String getName() {
         return name;
     }
