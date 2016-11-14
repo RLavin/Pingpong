@@ -1,9 +1,7 @@
 package com.ironyard.data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 /**
  * Created by Raul on 11/9/16.
@@ -14,9 +12,22 @@ public class Player {
     private String nickname;
     private int wins;
     private int losses;
+
+  /**  @OneToMany(fetch = FetchType.EAGER)
+    private Set<Match> matches;
+
+    public Set<Match> getMatches() {
+        return matches;
+    }
+
+    public void setMatches(Set<Match> favs) {
+        this.matches = matches;
+    }**/
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+
 
     public Player(String raul, String s, int i, int i1) {
 

@@ -1,4 +1,4 @@
-package com.ironyard.controler;
+package com.ironyard.controler.rest;
 
 import com.ironyard.data.Match;
 import com.ironyard.repositories.MatchRepository;
@@ -22,8 +22,11 @@ public class MatchControler {
     private MatchRepository matchRepository ;
 
 
-
-
+    /** saves a new match to the database
+     *
+     * @param aMatch
+     * @return
+     */
     @RequestMapping(value = "save", method = RequestMethod.POST, produces = "application/json")
     public Match save(@RequestBody Match aMatch){
         matchRepository.save(aMatch);
@@ -50,12 +53,11 @@ public class MatchControler {
         return deleted;
     }
     @RequestMapping(value = "list", method = RequestMethod.GET)
-    public Iterable<Match> list (@RequestParam(value ="page", required = false)Integer page,
-                                 @RequestParam(value = "size", required = false)Integer size,
+    public Iterable<Match> list (
                                  @RequestParam(value = "sortby", required = false) String sortby,
                                  @RequestParam(value = "dir", required = false) Sort.Direction direction){
 
-        log.debug(String.format("Begin listAll (page:%s, size:%s, sortby:%s, dir:%s):",page,size,sortby,direction));
+        log.debug(String.format("Begin listAll ( sortby:%s, dir:%s):",sortby,direction));
 
         // DEFAULT Sort property
         if (sortby == null) {
@@ -67,8 +69,8 @@ public class MatchControler {
             direction = Sort.Direction.DESC;
         }
         Sort s = new Sort(direction, sortby);
-        PageRequest pr = new PageRequest(page, size, s);
-        Iterable<Match> found =  matchRepository.findAll(pr);
+
+        Iterable<Match> found =  matchRepository.findAll(s);
         log.debug(String.format("End listAll: %s", found));
 
         return found;

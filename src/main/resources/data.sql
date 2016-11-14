@@ -17,4 +17,5 @@ INSERT INTO match (id, player_one, player_two, player_one_score, player_two_scor
 INSERT INTO match (id, player_one, player_two, player_one_score, player_two_score) VALUES (-6, 'Raul Lavin','Faviana Lopez', 21, 15);
 
 
+INSERT INTO pong_user (id, display_name, password, username) VALUES (1, 'Raul Lavin', 'Skymall', 'Raul');
 

@@ -8,4 +8,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * Created by Raul on 11/10/16.
  */
 public interface PlayerRepository extends PagingAndSortingRepository<Player, Long> {
+
 }
