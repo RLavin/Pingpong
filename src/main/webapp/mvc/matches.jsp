@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Raul
+  Date: 11/14/16
+  Time: 3:54 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
@@ -48,20 +55,20 @@
     <div class="header clearfix">
         <nav>
             <ul class="nav nav-pills pull-right">
-                <li role="presentation" class="active"><a href="/mvc/allplayers">Players</a></li>
-                <li role="presentation"><a href="/mvc/allmatches">Matches</a></li>
-                <li role="presentation"><a href="/mvc/add_player.jsp">Create Player</a></li>
+                <li role="presentation"><a href="/mvc/allplayers">Players</a></li>
+                <li role="presentation"class="active"><a href="/mvc/allmatches">Matches</a></li>
+                <li role="presentation"><a href="/mvc/add_match.jsp">Log A Match</a></li>
                 <li role="presentation"><a href="/mvc/logout">Logout</a></li>
             </ul>
         </nav>
-        <h3 class="text-muted">Ping Pong Players</h3>
+        <h3 class="text-muted">Ping Pong Matches</h3>
     </div>
 
 
 
     <div class="row marketing">
         <div class="col-lg-6">
-            <h4>List of Players </h4>
+            <h4>List of Matches </h4>
 
             <p/>
 
@@ -69,23 +76,23 @@
                 <thead>
                 <tr>
                     <th>Action</th>
-                    <th>Name</th>
-                    <th>Nickname</th>
-                    <th>Wins</th>
-                    <th>Losses</th>
+                    <th>Player One</th>
+                    <th>Player One Score</th>
+                    <th>Player Two</th>
+                    <th>Player Two Score</th>
                     <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
 
-                <c:forEach items="${all_players}" var="aPlayer">
+                <c:forEach items="${all_matches}" var="aMatch">
                     <tr>
-                        <td><a href="/mvc/player/select?id=<c:out value="${aPlayer.id}"/>">Edit Player</a></td>
-                        <td><c:out value="${aPlayer.name}"/></td>
-                        <td><c:out value="${aPlayer.nickname}"/></td>
-                        <td><c:out value="${aPlayer.wins}"/></td>
-                        <td><c:out value="${aPlayer.losses}"/></td>
-                        <td><a href="/mvc/player/delete?id=<c:out value="${aPlayer.id}"/>">Remove Player</a></td>
+                        <td><a href="/mvc/match/select?id=<c:out value="${aMatch.id}"/>">Edit Match</a></td>
+                        <td><c:out value="${aMatch.playerOne}"/></td>
+                        <td><c:out value="${aMatch.playerOneScore}"/></td>
+                        <td><c:out value="${aMatch.playerTwo}"/></td>
+                        <td><c:out value="${aMatch.playerTwoScore}"/></td>
+                        <td><a href="/mvc/match/delete?id=<c:out value="${aMatch.id}"/>">Remove Match</a></td>
 
                     </tr>
                 </c:forEach>

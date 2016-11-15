@@ -1,7 +1,7 @@
 INSERT INTO player (id, name, nickname, wins, losses) VALUES (-1, 'Raul Lavin','The Angular', 10, 6);
 INSERT INTO player (id, name, nickname, wins, losses) VALUES (-2, 'John Rivers','Fast Server', 24, 9);
 INSERT INTO player (id, name, nickname, wins, losses) VALUES (-3, 'Yao Nee','The Ninja', 12, 5);
-INSERT INTO player (id, name, nickname, wins, losses) VALUES (-4, 'Ashely Brown','', 20, 10);
+INSERT INTO player (id, name, nickname, wins, losses) VALUES (-4, 'Ashely Brown','Smoother', 20, 10);
 INSERT INTO player (id, name, nickname, wins, losses) VALUES (-5, 'Nick James','HardHiter', 3, 12);
 INSERT INTO player (id, name, nickname, wins, losses) VALUES (-6, 'May Snow','Spinner', 5, 6);
 INSERT INTO player (id, name, nickname, wins, losses) VALUES (-7, 'Brian Nelson','Destroyer', 30, 0);

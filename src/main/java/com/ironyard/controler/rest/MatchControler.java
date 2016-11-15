@@ -53,12 +53,18 @@ public class MatchControler {
         return deleted;
     }
     @RequestMapping(value = "list", method = RequestMethod.GET)
-    public Iterable<Match> list (
+    public Iterable<Match> list (@RequestParam(value ="page", required = false)Integer page,
+                                 @RequestParam(value = "size", required = false)Integer size,
                                  @RequestParam(value = "sortby", required = false) String sortby,
                                  @RequestParam(value = "dir", required = false) Sort.Direction direction){
 
-        log.debug(String.format("Begin listAll ( sortby:%s, dir:%s):",sortby,direction));
-
+        log.debug(String.format("Begin listAll (page:%s, size:%s, sortby:%s, dir:%s):",page,size,sortby,direction));
+        if (page == null){
+            page = 0;
+        }
+        if (size == null){
+            size = 100;
+        }
         // DEFAULT Sort property
         if (sortby == null) {
             sortby = "playerOne";
@@ -69,8 +75,8 @@ public class MatchControler {
             direction = Sort.Direction.DESC;
         }
         Sort s = new Sort(direction, sortby);
-
-        Iterable<Match> found =  matchRepository.findAll(s);
+        PageRequest pr = new PageRequest(page, size, s);
+        Iterable<Match> found =  matchRepository.findAll(pr);
         log.debug(String.format("End listAll: %s", found));
 
         return found;
