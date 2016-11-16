@@ -19,6 +19,7 @@ Please input your Match data and click 'Save'!
         <tr><td>Player One Score:</td>          <td><input type="text" name="playerOneScore"></td></tr>
         <tr> <td>Player Two:</td>    <td><input type="text" name="playerTwo"></td></tr>
         <tr> <td>Player Two Score:</td>    <td><input type="text" name="playerTwoScore"></td></tr>
+        <tr> <td>Date:</td>              <td><input type="text" name="dates"></td></tr>
 
     </table>
     <input type="submit" name="save" />

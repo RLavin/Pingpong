@@ -22,6 +22,7 @@ Please Edit your Match data and click 'Update'!
         <tr><td>Player One Score:</td>          <td><input type="text" name="playerOneScore" value="<c:out value="${myEdit.playerOneScore}"/>"></td></tr>
         <tr> <td>Player Two:</td>    <td><input type="text" name="playerTwo" value="<c:out value="${myEdit.playerTwo}"/>"></td></tr>
         <tr> <td>Player Two Score:</td>    <td><input type="text" name="playerTwoScore" value="<c:out value="${myEdit.playerTwoScore}"/>"></td></tr>
+        <tr> <td>Date:</td>              <td><input type="text" name="dates" value="<c:out value="${myEdit.dates}"/>"></td></tr>
 
     </table>
     <input type="submit" name="Update" />

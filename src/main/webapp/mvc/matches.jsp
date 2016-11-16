@@ -80,6 +80,7 @@
                     <th>Player One Score</th>
                     <th>Player Two</th>
                     <th>Player Two Score</th>
+                    <th>Date</th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -92,6 +93,7 @@
                         <td><c:out value="${aMatch.playerOneScore}"/></td>
                         <td><c:out value="${aMatch.playerTwo}"/></td>
                         <td><c:out value="${aMatch.playerTwoScore}"/></td>
+                        <td><c:out value="${aMatch.dates}"/></td>
                         <td><a href="/mvc/match/delete?id=<c:out value="${aMatch.id}"/>">Remove Match</a></td>
 
                     </tr>

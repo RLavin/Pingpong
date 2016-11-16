@@ -2,6 +2,7 @@ package com.ironyard.data;
 
 import javax.persistence.*;
 
+
 /**
  * Created by Raul on 11/9/16.
  */
@@ -11,6 +12,7 @@ public class Match {
     private String playerTwo;
     private int playerOneScore;
     private int playerTwoScore;
+    private String dates;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -47,6 +49,14 @@ public class Match {
         this.playerTwoScore = playerTwoScore;
     }
 
+    public String getDates() {
+        return dates;
+    }
+
+    public void setDates(String dates) {
+        this.dates = dates;
+    }
+
     public long getId() {
         return id;
     }
@@ -54,4 +64,5 @@ public class Match {
     public void setId(long id) {
         this.id = id;
     }
+
 }

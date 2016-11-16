@@ -9,12 +9,12 @@ INSERT INTO player (id, name, nickname, wins, losses) VALUES (-8, 'Sue Lavin','G
 
 
 
-INSERT INTO match (id, player_one, player_two, player_one_score, player_two_score) VALUES (-1, 'Raul Lavin','Jason Skipper', 21, 6);
-INSERT INTO match (id, player_one, player_two, player_one_score, player_two_score) VALUES (-2, 'Faviana Lopez','Jason Skipper', 21, 19);
-INSERT INTO match (id, player_one, player_two, player_one_score, player_two_score) VALUES (-3, 'Reeva','Jason Skipper', 21, 10);
-INSERT INTO match (id, player_one, player_two, player_one_score, player_two_score) VALUES (-4, 'Tom','Jason Skipper', 22, 20);
-INSERT INTO match (id, player_one, player_two, player_one_score, player_two_score) VALUES (-5, 'Nathaniel','Jason Skipper', 2, 21);
-INSERT INTO match (id, player_one, player_two, player_one_score, player_two_score) VALUES (-6, 'Raul Lavin','Faviana Lopez', 21, 15);
+INSERT INTO match (id, player_one, player_two, player_one_score, player_two_score, dates) VALUES (-1, 'Raul Lavin','Jason Skipper', 21, 6,'09/20/16');
+INSERT INTO match (id, player_one, player_two, player_one_score, player_two_score,dates) VALUES (-2, 'Faviana Lopez','Jason Skipper', 21, 19,'01/01/16');
+INSERT INTO match (id, player_one, player_two, player_one_score, player_two_score,dates) VALUES (-3, 'Reeva','Jason Skipper', 21, 10,'11/12/16');
+INSERT INTO match (id, player_one, player_two, player_one_score, player_two_score,dates) VALUES (-4, 'Tom','Jason Skipper', 22, 20,'10/05/16');
+INSERT INTO match (id, player_one, player_two, player_one_score, player_two_score,dates) VALUES (-5, 'Nathaniel','Jason Skipper', 2, 21,'08/02/16');
+INSERT INTO match (id, player_one, player_two, player_one_score, player_two_score,dates) VALUES (-6, 'Raul Lavin','Faviana Lopez', 21, 15,'08/30/16');
 
 
 INSERT INTO pong_user (id, display_name, password, username) VALUES (1, 'Raul Lavin', 'Skymall', 'Raul');
