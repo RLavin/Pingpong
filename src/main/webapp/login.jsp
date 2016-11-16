@@ -96,13 +96,13 @@
             border-top-left-radius: 0;
             border-top-right-radius: 0;
         }
-        }
+
     </style>
 </head>
 <body>
-<div>
-    <c:out value="${message}"/>
-</div>
+<c:if test="${error_message != null}">
+    <div class="alert alert-danger"><c:out value="${error_message}"/></div>
+</c:if>
 <div class="wrapper">
     <form class="form-signin" action="/mvc/login" method="post">
         <h2 class="form-signin-heading">Please login</h2>
