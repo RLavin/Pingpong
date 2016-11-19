@@ -39,6 +39,7 @@ public class PongController {
         // put them in a model
         model.addAttribute("all_players", allPlayers);
 
+
         // send them to the home page
         return "/home";
     }
@@ -92,7 +93,7 @@ public class PongController {
 
         playerRepository.save(aPlayer);
 
-        // send them back to the home player page
+        // send them back to the home player pageßßß
         return "redirect:/mvc/allplayers";
     }
 
@@ -110,6 +111,8 @@ public class PongController {
         String destination = "/edit_player";
         // re fetch player by id from db
        Player playerEdit = playerRepository.findOne(id);
+      // playerEdit.setWins(matchRepository.countWinsForPlayer(playerEdit.getName()));
+
 
         // put them in a model
         model.addAttribute("myEdit", playerEdit);
@@ -130,6 +133,8 @@ public class PongController {
         // send them to the match edit page
         return destination;
     }
+
+
 
 
 }
