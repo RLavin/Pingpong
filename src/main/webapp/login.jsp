@@ -57,7 +57,14 @@
     <style>
         @import "bourbon";
         body {
-            background: #eee !important;
+            background-image: url("https://t4.ftcdn.net/jpg/01/08/84/41/240_F_108844124_VevkPBJVmHwsqctCKC0Do3WwCVlviz84.jpg");
+            background-repeat:no-repeat;
+            background-size:cover;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
         }
         .wrapper {
             margin-top: 80px;
@@ -100,6 +107,7 @@
     </style>
 </head>
 <body>
+<h1>Ping Pong Scoreboard</h1>
 <c:if test="${error_message != null}">
     <div class="alert alert-danger"><c:out value="${error_message}"/></div>
 </c:if>

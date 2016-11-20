@@ -14,12 +14,12 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class PlayerRepositoryTest {
+public class PlayerTest {
     @Autowired
     private PlayerRepository playerRepository;
 
     @Test
-    public void testSavePlayer() throws Exception{
+    public void testCreatePlayer() throws Exception{
 
         // create new player
         Player player =  playerRepository.save(new Player("Raul","The destroyer",10,5));
@@ -28,4 +28,17 @@ public class PlayerRepositoryTest {
         Assert.assertNotNull(playerRepository.findOne(player.getId()));
 
     }
+
+    @Test
+    public void testDeletePlayer() throws Exception{
+
+        // create new player
+        Player player =  playerRepository.save(new Player("Raul","The destroyer",10,5));
+        playerRepository.delete(player);
+        // player should not be there
+        Assert.assertNull(playerRepository.findOne(player.getId()));
+
+    }
+
+
 }
